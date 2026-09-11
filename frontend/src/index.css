@@ -1,0 +1,332 @@
+@import "tailwindcss";
+
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  color: #111827;
+  background: #f6f7f9;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: #f6f7f9;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #111827;
+  color: white;
+}
+
+/* -------------------------------- */
+/* Premium page entrance             */
+/* -------------------------------- */
+
+.page-enter {
+  animation: pageEnter 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------- */
+/* Fade + slide                      */
+/* -------------------------------- */
+
+.fade-up {
+  animation: fadeUp 550ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* -------------------------------- */
+/* Staggered entrance                */
+/* -------------------------------- */
+
+.stagger-1 {
+  animation-delay: 60ms;
+}
+
+.stagger-2 {
+  animation-delay: 120ms;
+}
+
+.stagger-3 {
+  animation-delay: 180ms;
+}
+
+.stagger-4 {
+  animation-delay: 240ms;
+}
+
+.stagger-5 {
+  animation-delay: 300ms;
+}
+
+.stagger-6 {
+  animation-delay: 360ms;
+}
+
+/* -------------------------------- */
+/* Premium card interaction          */
+/* -------------------------------- */
+
+.premium-card {
+  transition:
+    transform 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 300ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 18px 45px rgba(17, 24, 39, 0.07),
+    0 4px 12px rgba(17, 24, 39, 0.04);
+}
+
+/* -------------------------------- */
+/* Button interaction                */
+/* -------------------------------- */
+
+.premium-button {
+  transition:
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.premium-button:hover {
+  transform: translateY(-1px);
+}
+
+.premium-button:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* -------------------------------- */
+/* Icon interaction                  */
+/* -------------------------------- */
+
+.icon-motion {
+  transition:
+    transform 250ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 250ms ease;
+}
+
+.group:hover .icon-motion {
+  transform: scale(1.06);
+}
+
+/* -------------------------------- */
+/* Soft floating motion              */
+/* -------------------------------- */
+
+.float-soft {
+  animation: floatSoft 4s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* -------------------------------- */
+/* Pulse indicator                   */
+/* -------------------------------- */
+
+.pulse-soft {
+  animation: pulseSoft 2.4s ease-in-out infinite;
+}
+
+@keyframes pulseSoft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.45;
+  }
+}
+
+/* -------------------------------- */
+/* Smooth number appearance          */
+/* -------------------------------- */
+
+.number-pop {
+  animation: numberPop 450ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes numberPop {
+  from {
+    opacity: 0;
+    transform: translateY(6px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* -------------------------------- */
+/* Success animation                 */
+/* -------------------------------- */
+
+.success-enter {
+  animation: successEnter 400ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes successEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* -------------------------------- */
+/* Modal / drawer motion             */
+/* -------------------------------- */
+
+.drawer-enter {
+  animation: drawerEnter 300ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes drawerEnter {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* -------------------------------- */
+/* Subtle loading shimmer            */
+/* -------------------------------- */
+
+.shimmer {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.035) 25%,
+      rgba(0, 0, 0, 0.07) 50%,
+      rgba(0, 0, 0, 0.035) 75%
+    );
+
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+@keyframes shimmer {
+  from {
+    background-position: 200% 0;
+  }
+
+  to {
+    background-position: -200% 0;
+  }
+}
+
+/* -------------------------------- */
+/* Scrollbar                         */
+/* -------------------------------- */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* -------------------------------- */
+/* Accessibility                     */
+/* -------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
